@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./Register.css">
+    <link rel="icon" type="image/x-icon" href="./Pro-img/PRO-LOGO.jpg">
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Register</h2>
+        <form id="reg-form" class="reg-form" action="">
+            <div class="reg-input-box">
+                <input type="text" id="reg-name" placeholder="Enter Your Name" >
+
+            </div>
+            <div class="reg-input-box">
+                <input type="email" id="reg-email" placeholder="Enter Your Email" >
+
+            </div>
+            <div class="reg-input-box">
+                <input type="password" id="reg-pass" placeholder="Enter Your Password" >
+
+            </div>
+            <div class="reg-input-box">
+                <input type="password" id="con-pass" placeholder="Confirm password" >
+
+            </div>
+            <div class="policy">
+                <input type="checkbox">
+                <h3>I accept all the terms and conditions</h3>
+
+            </div>
+            <div id="signUpMessage">
+
+            </div>
+            <div class="reg-input-box button">
+                <input type="submit" id="reg-submit" value="Register Now">
+
+
+            </div>
+            <div class="text">
+                <h3>Already have an account  <a href="./log-in.html">Login now</a> </h3>
+
+            </div>
+
+            
+
+
+        </form>
+
+
+    </div>
+
+   <script>
+      document.querySelector("#reg-submit").addEventListener("click", function(event){
+        event.preventDefault();
+
+        const regName = document.querySelector("#reg-name").value;
+        const regEmail = document.querySelector("#reg-email").value;
+        const regPassword = document.querySelector("#reg-pass").value;
+        const regEmailConfirm = document.querySelector("#con-pass").value;
+        let signUpMessage = "";
+
+        switch(true){
+            case regName === "":
+            signUpMessage = "Please enter your name"; // Use '=' instead of '==='
+            break;
+            case regEmail === "":
+            signUpMessage = "Please enter your email"; // Use '=' instead of '==='
+            break;
+            case regPassword === "":
+            signUpMessage = "Please enter your password"; // Use '=' instead of '==='
+            break;
+            case regEmailConfirm === "":
+            signUpMessage = "Please confirm your email"; // Use '=' instead of '==='
+            break;
+            default:
+            signUpMessage = "Form submitted successfully!";
+            // Save data to localStorage
+            localStorage.setItem("reg-name", regName);
+            localStorage.setItem("reg-email", regEmail);
+            localStorage.setItem("reg-pass", regPassword);
+            localStorage.setItem("con-pass", regEmailConfirm);
+
+            document.querySelector("#reg-form").submit();
+
+            window.location.href = "./log-in.html";
+
+
+            break;
+        }
+
+    document.querySelector("#signUpMessage").textContent = signUpMessage;
+    console.log(signUpMessage);
+    });
+
+   </script>
+    <script src="./script.js"></script>
+</body>
+</html>

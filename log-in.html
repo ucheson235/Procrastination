@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+			rel="stylesheet"
+	/>
+        <link rel="icon" type="image/x-icon" href="./Pro-img/PRO-LOGO.jpg">
+    <link rel="stylesheet" href="./log-in.css">
+    <title>Log-In</title>
+
+</head>
+<body>
+
+    <div class="login-contanier">
+        <form action="#" id="login-form">
+            <h2>Log-In</h2>
+            <div class="login-input-space">
+                <input type="text" id="login-name" required>
+                <label for="Enter your name"></label>
+
+            </div>
+            <div class="login-input-space">
+                <input type="password" id="log-pass"  required>
+                <label for="Enter your password"></label>
+
+            </div>
+            <div class="remember-forgot">
+                <label for="rememberme">
+                    <input type="checkbox" id="rememberme">
+                    <p>Remember Me</p>
+                </label>
+                <a href="./forgot.html">Forgot Password</a>
+
+            </div>
+            <div id="logInMessage">
+
+            </div>
+            <button type="submit" id="log-submit">Login</button>
+
+        </form>
+        <div class="regiter">
+            <p>don't have an account? <a href="./Register.html">Sign-Up</a></p> 
+        </div>
+
+
+    </div>
+    
+
+    <script>
+       document.querySelector("#log-submit").addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent the default form submission behavior
+
+                const logInName = document.querySelector("#login-name").value;
+                const logInPass = document.querySelector("#log-pass").value;
+                let logInMessage = "";
+
+                // Retrieve stored data from localStorage
+                const storedName = localStorage.getItem("reg-name");
+                const storedPass = localStorage.getItem("reg-pass");
+
+                // Validation for empty fields
+                if (logInName === "") {
+                    logInMessage = "Please enter your name";
+                } else if (logInPass === "") {
+                    logInMessage = "Please enter your password";
+                } else {
+                    // Check if the entered credentials match the stored data
+                    if (logInName !== storedName || logInPass !== storedPass) {
+                    logInMessage = "Incorrect name or password";
+                    } else {
+                    logInMessage = "Login successful!";
+                    // Redirect to another page after successful login
+                    window.location.href = "./tasks.html"; // Replace "dashboard.html" with your target page
+                    }
+                }
+
+        // Display the login message
+        document.querySelector("#logInMessage").textContent = logInMessage;
+        console.log(logInMessage);
+        });
+
+
+    </script>
+</body>
+</html>

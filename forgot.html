@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgotPassword</title>
+    <link rel="stylesheet" href="./forgot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="icon" type="image/x-icon" href="./Pro-img/PRO-LOGO.jpg">
+    
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="forgot_container">
+           <div class="forgot-tittle">
+            <span>Forgot Password</span>
+           </div>
+
+           <div class="forgot-input_wrapper">
+            <input type="text" id="user" class="input_field" required>
+            <label for="user" class="label">Name</label>
+            <i class="fa-solid fa-user"></i>
+
+           </div>
+           <div class="forgot-input_wrapper">
+            <input type="password" id="pass" class="input_field" required>
+            <label for="pass" class="label"> New Password</label>
+            <i class="fa-solid fa-lock"></i>
+
+           </div>
+           <div class="forgot-input_wrapper">
+            <input type="password" id="new-pass" class="input_field" required>
+            <label for="new-pass" class="label">Confirm password</label>
+            <i class="fa-solid fa-lock"></i>
+
+           </div>
+           <div id="resetMessage">
+
+           </div>
+           <div class="forgot-input_wrapper">
+            <input type="submit"  class="input-submit" value="Submit">
+
+           </div>
+           
+        </div>
+    </div>
+
+
+    
+    <script>
+        document.querySelector(".input-submit").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        const forName = document.querySelector("#user").value;
+        const newPassword = document.querySelector("#pass").value;
+        const conFirmPassword = document.querySelector("#new-pass").value;
+        let resetMessage = "";
+
+        // Retrieve stored data from localStorage
+        const storedName = localStorage.getItem("reg-name");
+
+        // Check if the username exists in localStorage
+        if (forName !== storedName) {
+            resetMessage = "Username not found.";
+        } else if (newPassword === "" || conFirmPassword === "") {
+            resetMessage = "Please fill in all password fields.";
+        } else if (newPassword !== conFirmPassword) {
+            resetMessage = "Passwords do not match.";
+        } else {
+            // Update the password in localStorage
+            localStorage.setItem("reg-pass", newPassword);
+            resetMessage = "Password reset successfully!";
+            // Optionally, redirect to the login page after a successful reset
+            window.location.href = "./log-in.html"; // Replace with your login page
+        }
+
+        // Display the reset message in the resetMessage div
+        document.querySelector("#resetMessage").textContent = resetMessage;
+    });
+
+
+
+    </script>
+</body>
+</html>

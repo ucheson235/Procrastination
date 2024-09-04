@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    min-width: 100vh;
+    height: 100vh;
+    background-image: url(./Pro-img/reg-img.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.wrapper{
+    position: relative;
+    background: #fff;
+    padding: 36px;
+    max-width: 433px;
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper h2{
+    position: relative;
+    font-weight: 600;
+    color: #333;
+    font-size: 1.5rem;
+
+
+}
+
+.wrapper h2::before{
+    content: "";
+    height: 3px;
+    width: 28px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgb(197, 40, 215);
+    border-radius: 12px;
+}
+
+.wrapper form{
+    margin-top: 30px;
+}
+
+.wrapper form .reg-input-box{
+    margin: 18px 0;
+    height: 52px;
+}
+
+.reg-input-box input{
+    outline: none;
+    padding: 0 15px;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 400;
+    border: 1.5px solid #c7bebe;
+    height: 100%;
+    width: 100%;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3 ease;
+
+}
+
+
+
+.reg-input-box  input:focus,
+.reg-input-box  input:valid {
+    border-color: rgb(197, 40, 215);
+   
+}
+
+.reg-form .policy {
+    display: flex;
+    align-items: center;
+}
+
+.reg-form h3{
+    font-size: 0.90rem;
+    font-weight: 500;
+    color: #7e7e7e;
+    margin-left: 10px;
+
+
+}
+
+.reg-input-box.button input{
+    color: #fff;
+    border: none;
+    background: rgb(197, 40, 215);
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.reg-input-box.button input:hover{
+    background: rgb(197, 40, 215);
+}
+
+.reg-form.text h3{
+    width: 100%;
+    color: #333;
+    text-align: center;
+}
+
+.text h3 a {
+    text-decoration: none;
+    color: rgb(197, 40, 215);
+}
+
+.text h3 a:hover{
+    text-decoration: underline;
+}
+
+#signUpMessage{
+    padding: 20px;
+    color: red;
+    font-size: 1.5rem;
+
+}
+
+
+

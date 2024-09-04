@@ -1,0 +1,597 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/* header style */
+
+header{
+    position: fixed;
+    z-index: 99;
+    top:0;
+    background-color: white;
+    width: 100%;
+ }
+
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul{
+    display: flex;
+    align-self: center;
+
+}
+
+a, li{
+    text-decoration: none;
+    list-style: none;
+    padding: 30px;
+    font-size: 3rem;
+    color: #100101;
+   
+}
+
+a li:hover{
+    text-decoration: underline;
+
+}
+
+.btn-div{
+    align-self: center;
+    
+}
+
+.log-in{
+    padding: 10px 20px;
+    font-size: 2rem;
+    font-weight: 100;
+    border: none;
+    background-color: #fff;
+}
+
+.log-in:hover{
+    background-color: aqua;
+    box-sizing: 5px;
+}
+
+.started{
+    padding: 10px 20px;
+    background-color: aqua;
+    border: none;
+    font-size: 2rem;
+    border-radius: 5px;
+    color: #100101;
+}
+.started:hover{
+    background-color: rgb(2, 72, 72);
+    color: #fff;
+}
+
+.logo{
+    align-self: center;
+}
+
+.sidebar a{
+    display: none;
+}
+
+.menu-div {
+    display: none;
+}
+
+/* style for hero section  */
+.hero{
+    background-image: url(./Pro-img/hero-img.jpg);
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.hero-div{
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    position: relative;
+    opacity: 0.6;
+
+}
+
+.hero-text{
+    position: absolute;
+    top: 40%;
+    left: 8%;
+}
+
+.hero-text h1{
+    font-size: 7rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.hero-text p{
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 30px;
+  
+}
+
+/* styles for smart sections  */
+ .smart{
+    display: flex;
+    justify-content: space-between;
+    padding: 125px;
+    background-color: #818181;
+    
+ }
+
+ .smart-text{
+    align-self: center;
+    
+ }
+
+ .smart-text h2{
+    font-size: 7rem;
+    font-weight: bolder;
+    color: rgb(1, 48, 48);
+    margin-bottom: 20px;
+
+ }
+
+ .smart-text p{
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(1, 48, 48);
+    margin-bottom: 30px;
+ }
+
+ .smart-img img{
+    border-radius: 10px;
+ }
+
+
+ /* styles for work section  */
+ .work {
+    padding: 125px;
+    
+
+ }
+
+ .work h1 {
+    text-align: center;
+    padding: 50px;
+    font-size: 7rem;
+    font-weight: bolder;
+    color: rgb(1, 48, 48);
+ }
+
+ .card-div{
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .card{
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(8, 66, 65, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 50px;
+    text-align: center;
+   
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(55, 128, 127, 0.8);
+  }
+
+  .card h3{
+     padding: 5px;
+     font-size: 2.5rem;
+     color: rgb(1, 48, 48);
+  }
+
+  .card p{
+    padding: 20px;
+    font-size: 1.5rem;
+    color: rgb(1, 48, 48);
+  }
+
+  .card-img img{
+    width: 100%;
+  }
+
+  /* styles for footer */
+
+  footer {
+    padding: 125px;
+    background-color: #818181;
+  }
+
+  .footer-div{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-div h2{
+    font-size: 3rem;
+    color: rgb(1, 48, 48);
+    margin-bottom: 20px;
+  }
+
+  .footer-div h3{
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: rgb(1, 48, 48);
+  }
+
+  .social-img img{
+    width: 40px;
+   
+  }
+
+  .footer-div h3:hover{
+    text-decoration: underline;
+    color: red;
+  }
+
+  footer p{
+    text-align: center;
+    padding: 30px;
+    font-size: 2rem;
+    color: rgb(1, 48, 48);
+  }
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <-------------------------------------------> */
+/* responsive styles */
+@media (max-width: 600px){
+    nav {
+        display: none;
+    }
+
+    
+
+    .sidebar {
+    height: 40%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s ease; 
+    padding-top: 60px;
+}
+
+
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+
+#menu {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    
+}
+
+#menu:hover {
+    background-color: rgb(1, 48, 48);;
+    color: #fff;
+}
+
+.menu-div {
+    padding: 16px;
+    display: block;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    
+  }
+
+  .closebtn:hover{
+    text-decoration: none;
+  }
+
+  .hero-text{
+    top: 10%;
+    left: 8%;
+}
+
+#started{
+    background-color: transparent;
+    border:  solid white;
+    color: white;
+}
+
+#started:hover{
+    background-color: aqua;
+    color: black;
+    border: none;
+}
+
+.hero-text p{
+    font-size: 1.80rem;
+}
+.hero-text h1{
+    font-size: 4rem;
+    margin-top: 30px;
+}
+
+.hero{
+    height: 50vh;
+}
+.hero-div{
+    height: 50vh;
+}
+
+.smart{
+    display: block;
+}
+
+ .smart-text h2{
+    font-size: 5rem;
+    text-align: center;
+ }
+
+ .smart-text p{
+    font-size: 1.90rem;
+    margin-bottom: 40px;
+ }
+
+ .smart-img img{
+   width: 400px;
+   margin-top: 30px;
+ }
+
+.work{
+    padding: 20px;
+    
+}
+
+.work h1 {
+    font-size: 5rem;
+   
+ }
+
+ .card-div{
+    display: block;
+    justify-content: center;
+    padding: 100px;
+ }
+
+ .card{
+    margin-bottom: 50px;
+    height: 300px;
+    
+ }
+
+ footer {
+   padding: 20px;
+ }
+
+ .footer-div{
+    display: block;
+    margin-bottom: 30px;
+ }
+   
+   
+
+}
+
+
+
+@media (max-width: 1000px){
+    html{
+        font-size: 50%;
+    }
+
+    a, li{
+        padding: 10px;
+        font-size: 2rem;
+    }
+
+    a li:hover{
+        color: red;
+    
+    }
+
+    
+    .log-in:hover{
+        background-color: rgb(17, 17, 17);
+        border-radius: 5px;
+        color: #fff;
+    }
+
+    .smart{
+        display: block;
+        padding: 20px;
+        text-align: center;
+        
+        
+     }
+    
+     .smart-text h2{
+        font-size: 5rem;
+        text-align: center;
+     }
+    
+     .smart-text p{
+        font-size: 1.90rem;
+        margin-bottom: 40px;
+     }
+    
+     .smart-img img{
+       width: 400px;
+       margin-top: 30px;
+     }
+
+     .work{
+        padding: 20px;
+        
+    }
+    
+    .work h1 {
+        font-size: 5rem;
+        padding: 20px;
+       
+     }
+
+     .card{
+        width: 100px;
+        height: 300px;
+        padding: 20px;
+        
+       
+      }
+
+      .card h3{
+        padding: 2px;
+        font-size: 2rem;
+     }
+   
+     .card p{
+       padding: 20px;
+       font-size: 1.5rem;
+     }
+   
+     .card-img img{
+       width: 70%;
+     }
+
+     footer{
+        padding: 50px;
+     }
+    
+    
+        
+   
+
+    
+
+}
+
+@media (max-width: 1400px){
+    a, li{
+        padding: 15px;
+        font-size: 2.5rem;
+    }
+
+    .smart{
+        padding: 100px;
+        
+     }
+    
+     .smart-text h2{
+        font-size: 5rem;
+        text-align: center;
+     }
+    
+     .smart-text p{
+        font-size: 1.90rem;
+        margin-bottom: 40px;
+     }
+    
+     .smart-img img{
+       width: 400px;
+       margin-top: 30px;
+     }
+
+     .work{
+        padding: 50px;
+        
+    }
+    
+    .work h1 {
+        font-size: 5rem;
+        padding: 50px;
+       
+     }
+
+     .card{
+        width: 250px;
+        height: 300px;
+        padding: 20px;
+        
+       
+      }
+
+      .card h3{
+        padding: 2px;
+        font-size: 2rem;
+     }
+   
+     .card p{
+       padding: 20px;
+       font-size: 1rem;
+     }
+   
+     .card-img img{
+       width: 80%;
+     }
+
+    
+
+
+
+}
+
+
+
